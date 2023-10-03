@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './EmployeeSearch.css';
+import React, { useState } from "react";
+import "./EmployeeSearch.css";
 import {
   FormControl,
   InputLabel,
@@ -7,16 +7,16 @@ import {
   Select,
   TextField,
   Divider,
-  Autocomplete
-} from '@mui/material';
-import data from './api-employee-search.json';
+  Autocomplete,
+} from "@mui/material";
+import data from "./api-employee-search.json";
 
 const EmployeeSearch = () => {
   const [values, setValues] = useState(data.initial_values);
   const [errors, setErrors] = useState(data.errors);
 
-  const handleValueChange = event => {
-    setValues(values => {
+  const handleValueChange = (event) => {
+    setValues((values) => {
       return { ...values, [event.target.name]: event.target.value };
     });
   };
@@ -47,7 +47,7 @@ const EmployeeSearch = () => {
                     setErrors({
                       ...errors,
                       loginId:
-                        'Login ID contains special characters, please remove if not intentional'
+                        "Login ID contains special characters, please remove if not intentional",
                     });
                 }}
               />
@@ -69,7 +69,7 @@ const EmployeeSearch = () => {
                     setErrors({
                       ...errors,
                       employeeId:
-                        'Employee ID contains special characters, please remove if not intentional'
+                        "Employee ID contains special characters, please remove if not intentional",
                     });
                 }}
               />
@@ -92,7 +92,7 @@ const EmployeeSearch = () => {
                     /^-?\d+(\.\d+)?$/.test(values.lastName) &&
                     setErrors({
                       ...errors,
-                      lastName: 'Last Name contains numeric, please remove if not intentional'
+                      lastName: "Last Name contains numeric, please remove if not intentional",
                     });
                 }}
               />
@@ -114,7 +114,7 @@ const EmployeeSearch = () => {
                     /^-?\d+(\.\d+)?$/.test(values.firstName) &&
                     setErrors({
                       ...errors,
-                      firstName: 'First Name contains numeric, please remove if not intentional'
+                      firstName: "First Name contains numeric, please remove if not intentional",
                     });
                 }}
               />
@@ -136,14 +136,14 @@ const EmployeeSearch = () => {
                     /^-?\d+(\.\d+)?$/.test(values.middleName) &&
                     setErrors({
                       ...errors,
-                      middleName: 'Middle Name contains numeric, please remove if not intentional'
+                      middleName: "Middle Name contains numeric, please remove if not intentional",
                     });
                 }}
               />
             </div>
           </div>
 
-          <Divider sx={{ mt: '2rem', mb: '1rem' }} className='combination-divider'>
+          <Divider sx={{ mt: "2rem", mb: "1rem" }} className='combination-divider'>
             OR
           </Divider>
 
@@ -157,12 +157,12 @@ const EmployeeSearch = () => {
                   onInputChange={(event, newInputValue) => {
                     setValues({
                       ...values,
-                      jobTitle: newInputValue
+                      jobTitle: newInputValue,
                     });
                   }}
                   id='jobTitle'
-                  options={data.jobTitle.map(option => option.title)}
-                  renderInput={params => (
+                  options={data.jobTitle.map((option) => option.title)}
+                  renderInput={(params) => (
                     <TextField
                       {...params}
                       label='Job Title'
@@ -183,12 +183,12 @@ const EmployeeSearch = () => {
                   onInputChange={(event, newInputValue) => {
                     setValues({
                       ...values,
-                      location: newInputValue
+                      location: newInputValue,
                     });
                   }}
                   id='location'
-                  options={data.location.map(option => option.title)}
-                  renderInput={params => (
+                  options={data.location.map((option) => option.title)}
+                  renderInput={(params) => (
                     <TextField
                       {...params}
                       label='Location'
