@@ -1,0 +1,28 @@
+{
+  "initial_values": {
+    "lastName": "",
+    "middleName": "",
+    "firstName": "",
+    "loginId": "",
+    "employeeId": "",
+    "jobTitle": "",
+    "location": ""
+  },
+  "errors": {
+    "lastName": "",
+    "middleName": "",
+    "firstName": "",
+    "loginId": "",
+    "employeeId": "",
+    "jobTitle": "",
+    "location": ""
+  },
+  "jobTitle": [
+    { "title": "DIRECTOR", "value": "DIRECTOR" },
+    { "title": "DMV", "value": "DMV" }
+  ],
+  "location": [
+    { "title": "ALL LOCATIONS", "value": "ALL LOCATIONS" },
+    { "title": "C STREET SERVICE CENTER", "value": "C STREET SERVICE CENTER" }
+  ]
+}

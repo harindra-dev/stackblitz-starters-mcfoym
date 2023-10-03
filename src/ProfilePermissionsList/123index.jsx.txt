@@ -1,0 +1,71 @@
+import React, { useState } from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import { profileData, tableHead } from './api-profiles-list.json';
+import './ProfilePermissionsList.css';
+
+const ProfilePermissionsList = () => {
+  return (
+    <React.Fragment>
+      <div className='d-row profile-list-container'>
+        <div className='col-12'>
+          <div className='profile-permisiions-list list-view'>
+            <TableContainer className='profile-list-table-container'>
+              <Table
+                aria-label='simple table'
+                className='profile-list-table'
+                size='small'
+                stickyHeader
+              >
+                <TableHead>
+                  <TableRow>
+                    {tableHead.map((item, index) => {
+                      return (
+                        <TableCell key={index}>
+                          {item.label}
+                          <span className='sort-icon'>
+                            <svg
+                              xmlns='http://www.w3.org/2000/svg'
+                              width='16'
+                              height='20'
+                              viewBox='0 0 16 20'
+                              fill='none'
+                            >
+                              <path
+                                d='M8 4L4 0L0 4H3L3 19H5L5 4H8ZM8 16L12 20L16 16H13L13 1H11L11 16H8Z'
+                                fill='black'
+                              />
+                            </svg>
+                          </span>
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {profileData.map((profile, index) => (
+                    <TableRow key={profile + index}>
+                      <TableCell>{index + 1}</TableCell>
+                      <TableCell className='profile-name'>{profile.profile}</TableCell>
+                      <TableCell>{profile.beginDate}</TableCell>
+                      <TableCell>{profile.endDate}</TableCell>
+                      <TableCell>
+                        <span className={`profile-status ${profile.status}`}>{profile.status}</span>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export default ProfilePermissionsList;
