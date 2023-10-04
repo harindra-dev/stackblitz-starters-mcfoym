@@ -1,0 +1,7 @@
+/* DContainer */
+.DContainer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
